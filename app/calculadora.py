@@ -1,3 +1,8 @@
+"""
+    Funciones matemáticas para la calculadora: sumar, restar, multiplicar 
+    y dividir.
+"""
+
 def sumar(a, b):
     """
     Función para sumar dos números.
