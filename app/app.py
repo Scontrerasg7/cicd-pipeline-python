@@ -1,4 +1,3 @@
-# app/app.py
 from flask import Flask, render_template, request
 from .calculadora import sumar, restar, multiplicar, dividir
 
@@ -7,6 +6,10 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """
+    Ruta principal de la aplicación que maneja las operaciones de la calculadora.
+    Permite al usuario ingresar dos números y seleccionar una operación.
+    """
     resultado = None
     if request.method == "POST":
         try:
@@ -33,4 +36,9 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000, host="0.0.0.0")  # Quita debug=True para producción
+    """
+    Ejecuta la aplicación Flask en el puerto 8000 y 
+    permite el acceso desde cualquier IP.
+    Quitar debug=True para producción.
+    """
+    app.run(debug=True, port=8000, host="0.0.0.0")
