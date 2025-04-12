@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     """
-    Ruta principal de la aplicación que maneja las operaciones de la calculadora.
+    Ruta principal de la aplicación que maneja las operaciones de la 
+    calculadora.
     Permite al usuario ingresar dos números y seleccionar una operación.
     """
     resultado = None
