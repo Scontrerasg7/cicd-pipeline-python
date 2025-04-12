@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     """
-    Ruta principal de la aplicación que maneja las operaciones de la 
+    Ruta principal de la aplicación que maneja las operaciones de la
     calculadora.
     Permite al usuario ingresar dos números y seleccionar una operación.
     """
@@ -38,7 +38,7 @@ def index():
 
 if __name__ == "__main__":
     """
-    Ejecuta la aplicación Flask en el puerto 8000 y 
+    Ejecuta la aplicación Flask en el puerto 8000 y
     permite el acceso desde cualquier IP.
     Quitar debug=True para producción.
     """
