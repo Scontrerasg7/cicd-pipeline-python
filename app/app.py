@@ -1,5 +1,6 @@
 """app.py"""
 
+import os
 from flask import Flask, render_template, request
 from .calculadora import sumar, restar, multiplicar, dividir
 
@@ -37,6 +38,16 @@ def index():
 
     return render_template("index.html", resultado=resultado)
 
+@app.route("/health")
+def health():
+    """
+    Ruta de salud para verificar el estado de la aplicación.
+    Returns:
+        str: Estado de la aplicación.
+    """
+    return "OK", 200
+
 
 if __name__ == "__main__":  # pragma: no cover
-    app.run(port=8000, host="0.0.0.0")
+    app_port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, port=app_port, host="0.0.0.0")
