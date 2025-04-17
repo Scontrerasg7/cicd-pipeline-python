@@ -38,6 +38,7 @@ def index():
 
     return render_template("index.html", resultado=resultado)
 
+
 @app.route("/health")
 def health():
     """
