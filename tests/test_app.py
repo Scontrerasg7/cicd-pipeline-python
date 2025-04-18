@@ -33,6 +33,16 @@ def test_index_post_dividir(client):
     assert response.status_code == 200
     assert b'2.0' in response.data
 
+def test_index_post_potencia(client):
+    response = client.post('/', data={'num1': '2', 'num2': '3', 'operacion': 'potencia'})
+    assert response.status_code == 200
+    assert b'8.0' in response.data
+
+def test_index_post_modulo(client):
+    response = client.post('/', data={'num1': '5', 'num2': '3', 'operacion': 'modulo'})
+    assert response.status_code == 200
+    assert b'2.0' in response.data
+
 def test_index_post_dividir_by_zero(client):
     response = client.post('/', data={'num1': '6', 'num2': '0', 'operacion': 'dividir'})
     assert response.status_code == 200
@@ -52,4 +62,3 @@ def test_health(client):
     response = client.get('/health')
     assert response.status_code == 200
     assert b'OK' in response.data
-    
