@@ -1,6 +1,5 @@
 """
-Funciones matemáticas para la calculadora: sumar, restar, multiplicar
-y dividir.
+Funciones matemáticas para la calculadora
 """
 
 
